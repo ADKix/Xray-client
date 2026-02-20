@@ -1,0 +1,4 @@
+# Уменьшение размера содержимого для сборки.
+.dockerignore
+docker-compose.yml
+README.md
