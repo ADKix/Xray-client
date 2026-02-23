@@ -61,13 +61,22 @@ jobs:
           configurationJson: |
             {
               "tag_resolver": {
-                "method": "sort"
+                "sort": "date",
+                "transformer": {
+                  "pattern": "([0-9]+)",
+                  "target": "$1.0.0"
+                }
               },
               "transformers": [
                 {
                   "pattern": "^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\\(.*\\))?: (.*)",
                   "target": "$3"
                 }
+              ],
+              "ignore_labels": [
+                "docs",
+                "ci",
+                "chore"
               ]
             }
       - name: create release
