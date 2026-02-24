@@ -52,7 +52,7 @@ jobs:
           readme-filepath: "README.md"
       - name: build changelog
         id: changes
-        uses: mikepenz/release-changelog-builder-action@v5
+        uses: mikepenz/release-changelog-builder-action@v6
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -69,14 +69,27 @@ jobs:
               },
               "transformers": [
                 {
-                  "pattern": "^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\\(.*\\))?: (.*)",
+                  "pattern": "^(feat|fix|test|style|refactor|perf|build|revert|docs|ci|chore)(\\(.*\\))?: (.*)",
                   "target": "$3"
                 }
               ],
-              "ignore_labels": [
-                "docs",
-                "ci",
-                "chore"
+              "categories": [
+                {
+                  "title": "## 🚀 Features",
+                  "labels": ["feat"]
+                },
+                {
+                  "title": "## 🐛 Fixes",
+                  "labels": ["fix"]
+                },
+                {
+                  "title": "## 🧪 Tests",
+                  "labels": ["test"]
+                },
+                {
+                  "title": "## 📦 Other",
+                  "labels": ["style", "refactor", "perf", "build", "revert" ]
+                }
               ]
             }
       - name: create release
