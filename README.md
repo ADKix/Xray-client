@@ -1,4 +1,4 @@
-# Xray client in a tiny [Docker image](https://hub.docker.com/repository/docker/adkix/xray-client) based on Alpine Linux.
+# Xray client in a tiny [Docker image](https://hub.docker.com/r/adkix/xray-client) based on Alpine Linux.
 
 ### It uses [Xray-core](https://github.com/XTLS/Xray-core) and [tun2socks](https://github.com/xjasonlyu/tun2socks).
 
@@ -19,7 +19,7 @@ Note: pinging hosts through the container does not work due to tunnel limitation
 ------------
 ### Examples:
 * [RouterOS](#routeros-example)
-* [GNU/Linux](#linux-example)
+* [Linux](#linux-example)
 ------------
 
 ### RouterOS example:
