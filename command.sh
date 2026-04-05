@@ -3,7 +3,6 @@ set -e
 if [ -z "${ADDRESS}" ]; then echo "The ADDRESS environment variable must be set!" >&2; exit 1; fi
 if [ -z "${ID}" ]; then echo "The ID environment variable must be set!" >&2; exit 1; fi
 if [ -z "${PUBLIC_KEY}" ]; then echo "The PUBLIC_KEY environment variable must be set!" >&2; exit 1; fi
-if [ -z "${SHORT_ID}" ]; then echo "The SHORT_ID environment variable must be set!" >&2; exit 1; fi
 gateway=$(ip r | sed -n -E 's|default via ([^ ]+) .*|\1|p')
 if [ -n "${DNS}" ]; then
   ip route add "${DNS}" via "${gateway}"
@@ -54,8 +53,7 @@ cat >"/etc/xray.json" <<EOF
         "realitySettings": {
           "fingerprint": "chrome",
           "serverName": "${SNI}",
-          "publicKey": "${PUBLIC_KEY}",
-          "shortId": "${SHORT_ID}"
+          "publicKey": "${PUBLIC_KEY}"
         }
       }
     }

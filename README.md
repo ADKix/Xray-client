@@ -42,7 +42,6 @@ Creating a container and a network interface for it, providing internet access, 
 /container/envs add key=PORT value=<port number on the server [optional, default "443"]> list=xray-client
 /container/envs add key=ID value="<ID>" list=xray-client
 /container/envs add key=PUBLIC_KEY value="<public key>" list=xray-client
-/container/envs add key=SHORT_ID value="<short ID>" list=xray-client
 /container/envs add key=SNI value="<SNI [optional, default "www.google.com"]>" list=xray-client
 /container/config set registry-url=registry-1.docker.io
 /container add remote-image=adkix/xray-client root-dir=xray-client/ tmpfs=/tmp:64M:0777 interface=veth1 envlist=xray-client start-on-boot=yes
@@ -86,7 +85,6 @@ services:
       - PORT=<port number on the server [optional, default "443"]>
       - ID=<ID>
       - PUBLIC_KEY=<public key>
-      - SHORT_ID=<short ID>
       - SNI=<SNI [optional, default "www.google.com"]>
     devices:
       - /dev/net/tun
