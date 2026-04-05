@@ -27,5 +27,5 @@ COPY "entrypoint.sh" "command.sh" /
 ENTRYPOINT ["sh", "/entrypoint.sh"]
 CMD ["sh", "/command.sh"]
 ENV PORT=443
-ENV SNI=google.com
+ENV SNI=www.google.com
 EXPOSE 1080
