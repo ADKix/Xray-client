@@ -3,7 +3,7 @@
 ### It uses [Xray-core](https://github.com/XTLS/Xray-core) and [tun2socks](https://github.com/xjasonlyu/tun2socks).
 
 Supported protocols:
-- VLESS Reality
+- VLESS Reality via TCP or XHTTP
 
 Supported architectures:
 - linux/arm64/v8
@@ -40,6 +40,7 @@ Creating a container and a network interface for it, providing internet access, 
 /ip/firewall/mangle add action=change-mss chain=forward new-mss=1360 out-interface=veth1 passthrough=yes protocol=tcp tcp-flags=syn tcp-mss=1420-65535
 /container/envs add key=ADDRESS value="<server IP address>" list=xray-client
 /container/envs add key=PORT value=<port number on the server [optional, default "443"]> list=xray-client
+/container/envs add key=NETWORK value="<network type [optional, default "tcp"]>" list=xray-client
 /container/envs add key=ID value="<ID>" list=xray-client
 /container/envs add key=PUBLIC_KEY value="<public key>" list=xray-client
 /container/envs add key=SNI value="<SNI [optional, default "www.google.com"]>" list=xray-client
@@ -83,6 +84,7 @@ services:
     environment:
       - ADDRESS=<server IP address>
       - PORT=<port number on the server [optional, default "443"]>
+      - NETWORK=<network type [optional, default "tcp"]>
       - ID=<ID>
       - PUBLIC_KEY=<public key>
       - SNI=<SNI [optional, default "www.google.com"]>
