@@ -47,7 +47,8 @@ if [ "${NETWORK}" = "xhttp" ]; then
             "realitySettings": {
               "fingerprint": "chrome",
               "serverName": "${SNI}",
-              "publicKey": "${PUBLIC_KEY}"
+              "publicKey": "${PUBLIC_KEY}",
+              "shortId": "${SHORT_ID}"
             }
           }
         }
@@ -94,7 +95,8 @@ elif [ "${NETWORK}" = "tcp" ]; then
             "realitySettings": {
               "fingerprint": "chrome",
               "serverName": "${SNI}",
-              "publicKey": "${PUBLIC_KEY}"
+              "publicKey": "${PUBLIC_KEY}",
+              "shortId": "${SHORT_ID}"
             }
           }
         }
