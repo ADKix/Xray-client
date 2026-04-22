@@ -108,6 +108,17 @@ else
   exit 1
 fi
 
+{
+  echo "Address: ${ADDRESS}"
+  echo "Port: ${PORT}"
+  echo "Network: ${NETWORK}"
+  echo "ID: ${ID}"
+  echo "PublicKey: ${PUBLIC_KEY}"
+  echo "ShortID: ${SHORT_ID}"
+  echo "SNI: ${SNI}"
+  echo
+} | column -L -t
+
 ip route add "${ADDRESS}" via "${gateway}"
 ip tuntap add dev tun0 mode tun
 ip addr add 10.0.0.1/24 dev tun0
