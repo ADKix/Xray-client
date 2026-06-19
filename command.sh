@@ -8,6 +8,7 @@ fi
 if [ -z "${ADDRESS}" ]; then echo "The ADDRESS environment variable must be set!" >&2; exit 1; fi
 if [ -z "${ID}" ]; then echo "The ID environment variable must be set!" >&2; exit 1; fi
 if [ -z "${PUBLIC_KEY}" ]; then echo "The PUBLIC_KEY environment variable must be set!" >&2; exit 1; fi
+if [ -z "${SHORT_ID}" ]; then echo "The SHORT_ID environment variable must be set!" >&2; exit 1; fi
 if [ "${NETWORK}" = "xhttp" ]; then
   cat >"/etc/xray.json" <<-EOF
     {

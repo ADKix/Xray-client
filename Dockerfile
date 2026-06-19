@@ -4,7 +4,7 @@ ARG T2S=v2.6.0
 
 FROM alpine:${ALPINE}
 LABEL org.opencontainers.image.authors="Axl <https://github.com/ADKix>"
-RUN apk add -U --no-cache 7zip iproute2-minimal
+RUN apk add -U --no-cache 7zip util-linux-misc iproute2-minimal
 ARG XRAY
 ARG T2S
 ARG TARGETPLATFORM
