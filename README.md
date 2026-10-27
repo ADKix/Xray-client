@@ -14,8 +14,6 @@ Supported architectures:
 Verified servers:
 - [ADKix/Xray-server](https://github.com/ADKix/Xray-server)
 
-Note: pinging hosts through the container does not work due to tunnel limitations.
-
 ------------
 ### Examples:
 * [RouterOS](#routeros-example)

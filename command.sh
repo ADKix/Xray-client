@@ -128,4 +128,4 @@ ip route del default
 ip route add default dev tun0
 
 exec xray run -config "/etc/xray.json" &
-  exec tun2socks -loglevel warn -device tun0 -proxy socks5://127.0.0.1:1080
+  exec tun2socks --loglevel warn --device tun0 --proxy "socks5://127.0.0.1:1080"
